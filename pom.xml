@@ -21,7 +21,19 @@
         <guava.version>23.0</guava.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
     <repositories>
+        <!-- Spring milestones repo -->
         <repository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>
@@ -33,6 +45,7 @@
     </repositories>
 
     <pluginRepositories>
+        <!-- Spring milestones plugin repo -->
         <pluginRepository>
             <id>spring-milestones</id>
             <url>http://repo.spring.io/milestone</url>
@@ -41,16 +54,6 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${guava.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <resources>
@@ -95,8 +98,8 @@
                 </executions>
             </plugin>
 
+            <!-- Run Unit tests -->
             <plugin>
-                <!-- Run Unit tests -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
@@ -109,8 +112,8 @@
                     </includes>
                 </configuration>
             </plugin>
+            <!-- Run integration tests -->
             <plugin>
-                <!-- Run integration tests -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <executions>
