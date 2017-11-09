@@ -135,6 +135,15 @@
                 <configuration>
                     <dateFormat>yyyy-MM-dd HH:mm:ss z</dateFormat>
                     <dateFormatTimeZone>Etc/UTC</dateFormatTimeZone>
+                    <includeOnlyProperties>
+                        <onlyProperty>build.version</onlyProperty>
+                        <onlyProperty>branch</onlyProperty>
+                        <onlyProperty>build.time</onlyProperty>
+                        <onlyProperty>commit.time</onlyProperty>
+                        <onlyProperty>commit.id</onlyProperty>
+                        <onlyProperty>commit.id.abbrev</onlyProperty>
+                        <onlyProperty>commit.id.describe-short</onlyProperty>
+                    </includeOnlyProperties>
                 </configuration>
                 <executions>
                     <execution>
